@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./dist/styles.css" />
+    <title>IQVIA Code Challenge</title>
+  </head>
+  <body>
+    <main class="iqvia-cc">
+      <form name="iqvia-form" class="iqvia-form" aria-label="Apollo Coding Challenge">
+        <ol class="steps" role="">
+          <li class="" id="response">
+            <h2>Update Response</h2>
+            <div class="form-group" role="radiogroup" aria-labelledby="Update Response">
+              <label class="radio-container">I give my consent
+                <input type="radio" value="consent" name="updateRadio" id="consent" />
+                <span class="checkmark"></span>
+              </label>
+
+              <label class="radio-container">I do not give my consent
+                <input type="radio" value="verify" name="updateRadio" id="noConsent" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </li>
+
+          <li class="disabled" id="method">
+            <h2>Select a method</h2>
+            <div class="form-group" role="radiogroup" aria-labelledby="Contact method">
+                <label class="radio-container">Text message (SMS) <span class="f-right">*** *** 3456</span>
+                  <input type="radio" name="methodRadio" value="sms" id="sms" />
+                  <span class="checkmark" role="radio" ></span>
+                </label>
+                <label class="radio-container">Voice call <span class="f-right">*** *** 3456</span>
+                    <input type="radio" name="methodRadio" value="voice" id="voice"/>
+                    <span class="checkmark" role="radio"></span>
+                </label>
+                <label class="radio-container">Email <span class="f-right">f****@iqvia.com</span>
+                    <input type="radio" name="methodRadio" value="email" id="email"/>
+                    <span class="checkmark" role="radio"></span>
+                </label>
+                <button type="button" class="btn btn-primary">Send code</button>
+            </div>
+          </li>
+
+          <li class="disabled" id="code">
+            <h2>Enter code</h2>
+            <div class="form-group">
+                <p>
+                An SMS has been sent to your mobile phone. Please check your
+                messages ( *** *** 3456 ) to obtain your validation code.</p>
+
+                <input
+                    type="text"
+                    name="codeValidation"
+                    placeholder="Code"
+                    id="codeValidation"
+                    onChange="checkLetters(this.value)"
+                    onfocus="verifyBtn()"
+                    aria-required="true"
+                />
+                <p class="error-message">Only numbers are accepted</p>
+                <div><a href="#" class="resend">Resend code</a></div>
+            </div>
+          </li>
+        </ol>
+
+        <button type="button" class="btn btn-primary" id="btnVerify" disabled>Verify</button>
+      </form>
+    </main>
+
+    <script type="text/javascript" src="./scripts.js"></script>
+  </body>
+</html>

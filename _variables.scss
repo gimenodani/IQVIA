@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 62.5%;
+    font-size: 1rem;
+}
+
+// colors
+$blue: #0768fd;
+$green: #00c221;
+$gray: #b5b5b5;
+$white: #fff;
+
+// animation
+@keyframes shadow {
+    0%   {box-shadow: none; width: auto;}
+    25%  {box-shadow: 0 4px 8px 0 rgba(7, 104, 253, 0.32); width: 50%;}
+    50%  {box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.04);}
+    75%  {box-shadow: 0 4px 8px 0 rgba(7, 104, 253, 0.7),
+        0 4px 16px 0 rgba(49, 33, 33, 0.07); width: 75%;}
+    100%  {box-shadow: 0 4px 8px 0 rgba(7, 104, 253, 0.32),
+          0 4px 16px 0 rgba(0, 0, 0, 0.04); width: auto;}
+  }
